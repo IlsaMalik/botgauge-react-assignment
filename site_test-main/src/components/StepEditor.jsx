@@ -58,20 +58,17 @@ function StepEditor() {
     return
   }
 
-  // Count editable tokens BEFORE this index
   const editableTokenIndices = tokens
     .map((t, i) => (t.type === 'editable' ? i : null))
     .filter((i) => i !== null)
 
   const position = editableTokenIndices.indexOf(index)
 
-  // position === 0 → first editable token
-  // position === 1 → second editable token → SHOW GLOBAL DROPDOWN
   if (position === 1) {
     setEditingTokenIndex(index)
     setShowGlobalVariables(true)
   } else {
-    // normal editable behavior for all others
+    
     setEditingTokenIndex(index)
   }
 }

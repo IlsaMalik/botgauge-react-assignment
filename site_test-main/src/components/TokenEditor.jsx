@@ -25,12 +25,12 @@ function TokenEditor({ tokens, onTokenDoubleClick, editingTokenIndex, onTokenEdi
   return (
     <div className="token-editor">
       {tokens.map((token, index) => {
-        // normal plain text token
+        
         if (typeof token === 'string') {
           return <span key={index} className="token-text">{token}</span>
         }
 
-        // currently editing this token
+        
         if (editingTokenIndex === index) {
           return (
             <input
@@ -42,21 +42,21 @@ function TokenEditor({ tokens, onTokenDoubleClick, editingTokenIndex, onTokenEdi
               onChange={(e) => setEditValue(e.target.value)}
               onKeyDown={(e) => handleKeyDown(e, index)}
               onBlur={() => onTokenEdit(index, editValue)}
-              onMouseDown={(e) => e.stopPropagation()}   // ⭐ IMPORTANT
+              onMouseDown={(e) => e.stopPropagation()}   
             />
           )
         }
 
-        // editable token display mode
+        
         return (
           <span
             key={index}
             className={`token-editable token-${token.color}`}
             onDoubleClick={(e) => {
-              e.stopPropagation()             // ⭐ PREVENT DROPDOWN FROM CLOSING
+              e.stopPropagation()             
               onTokenDoubleClick(index)
             }}
-            onMouseDown={(e) => e.stopPropagation()}     // ⭐ FIX CLICK FOCUS LOSS
+            onMouseDown={(e) => e.stopPropagation()}   
           >
             {token.isGlobal && <span className="global-badge">G</span>}
             {token.value}
