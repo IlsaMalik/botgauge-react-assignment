@@ -1,0 +1,66 @@
+.token-editor {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  flex: 1;
+}
+
+.token-text {
+  color: #333;
+  font-size: 1rem;
+}
+
+.token-editable {
+  padding: 2px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.token-editable:hover {
+  opacity: 0.8;
+}
+
+.token-orange {
+  color: #ff9800;
+  background-color: #fff3e0;
+}
+
+.token-green {
+  color: #4caf50;
+  background-color: #e8f5e9;
+}
+
+.token-purple {
+  color: #9c27b0;
+  background-color: #f3e5f5;
+}
+
+.global-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: #9c27b0;
+  color: white;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+.token-input {
+  padding: 2px 6px;
+  border: 2px solid #5c7cfa;
+  border-radius: 3px;
+  font-size: 1rem;
+  outline: none;
+  min-width: 60px;
+}
